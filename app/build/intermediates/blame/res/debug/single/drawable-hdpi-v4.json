@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_search.png",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png"
+    },
+    {
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon.png",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
+    },
+    {
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ex_doc.png",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable-hdpi\\ex_doc.png"
+    },
+    {
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ex_folder.png",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable-hdpi\\ex_folder.png"
+    },
+    {
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    }
+]

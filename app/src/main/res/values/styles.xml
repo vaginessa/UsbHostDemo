@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <declare-styleable name="BaseCircular">
+        <attr name="circular_size" format="reference|integer" />
+        <attr name="circular_drawable" format="color|reference" />
+        <attr name="circular_drawable_bg" format="color|reference" />
+    </declare-styleable>
+</resources>

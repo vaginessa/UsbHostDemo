@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cl_Blue">#5BCFE1</color>
+    <color name="cl_Blue_sc">#0000FF</color>
+    <color name="cl_Gray">#969899</color>
+    <color name="cl_Green">#008000</color>
+    <color name="cl_Red">#FF0000</color>
+    <color name="cl_Yellow">#FFFF00</color>
+    <color name="cl_black">#000000</color>
+    <color name="cl_gray">#DDDDDD</color>
+    <color name="cl_green">#00ff00</color>
+    <color name="cl_lightBlue">#5BCFE1</color>
+    <color name="cl_white">#FFFFFF</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="eraser_item_h">#C8E4EF</color>
+    <color name="eraser_item_n">#ECECEC</color>
+    <color name="pen_item_h">#D8D8D8</color>
+    <color name="pen_item_n">#F2F2F2</color>
+    <declare-styleable name="BaseCircular"><attr format="reference|integer" name="circular_size"/><attr format="color|reference" name="circular_drawable"/><attr format="color|reference" name="circular_drawable_bg"/></declare-styleable>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="app_name">UsbHostDemo</string>
+    <string name="dialog_read_from_dir">Open from dir</string>
+    <string name="explorer">Explorer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="text">到此为止：发现设备->枚举设备->找到设备的接口->连接设备->分配相应的端点，都已完成，下一步可以进行通讯处理。。祝你好运！</string>
+    <string name="title_activity_main">MainActivity</string>
+    <style name="AppTheme" parent="android:Theme.Light"/>
+</resources>

@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ivan.usbhost"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission
+        android:name="android.permission.WRITE_MEDIA_STORAGE"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+
+    <application
+        android:name="com.ivan.test.App"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.ivan.test.UsbFilesActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.ivan.test.ExDialogActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.ivan.test.TextActivity"
+            android:label="TextActivity" >
+        </activity>
+        <activity
+            android:name="com.ivan.test.ABTextActivity"
+            android:label="ABTextActivity" >
+        </activity>
+        <service android:name=".USB_Service">
+        </service>
+        <activity android:name="com.ivan.test.DialogActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

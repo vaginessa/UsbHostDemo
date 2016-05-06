@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 全局颜色 -->
+    <color name="cl_green">#00ff00</color>
+    <color name="cl_Green">#008000</color>
+    <color name="cl_black">#000000</color>
+    <color name="cl_white">#FFFFFF</color>
+    <color name="cl_gray">#DDDDDD</color>
+    <color name="cl_lightBlue">#5BCFE1</color>
+    <color name="cl_Blue">#5BCFE1</color>
+    <color name="cl_Blue_sc">#0000FF</color>
+    <color name="cl_Gray">#969899</color>
+    <color name="cl_Yellow">#FFFF00</color>
+    <color name="cl_Red">#FF0000</color>
+
+    <color name="eraser_item_h">#C8E4EF</color>
+    <color name="eraser_item_n">#ECECEC</color>
+
+    <color name="pen_item_h">#D8D8D8</color>
+    <color name="pen_item_n">#F2F2F2</color>
+
+</resources>
