@@ -107,7 +107,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title=0x7f0a0011;
     }
     public static final class layout {
-        public static final int abpopup_list_item_lay=0x7f030000;
+        public static final int widget_popup_list_item_lay =0x7f030000;
         public static final int add_popup_dialog=0x7f030001;
         public static final int circular_lay=0x7f030002;
         public static final int listview=0x7f030003;

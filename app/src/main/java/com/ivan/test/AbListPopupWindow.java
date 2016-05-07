@@ -284,7 +284,7 @@ public class AbListPopupWindow implements OnItemClickListener {
             ViewHoler viewHolder = null;
             if (convertView == null) {
                 viewHolder = new ViewHoler();
-                convertView = LayoutInflater.from(context).inflate(R.layout.abpopup_list_item_lay, null, true);
+                convertView = LayoutInflater.from(context).inflate(R.layout.widget_popup_list_item_lay, null, true);
                 viewHolder.im_pop_item = (ImageView) convertView.findViewById(R.id.pop_item_iv);
                 viewHolder.tv_pop_item = (TextView) convertView.findViewById(R.id.pop_item_tv);
                 convertView.setTag(viewHolder);
