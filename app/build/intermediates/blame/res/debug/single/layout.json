@@ -24,11 +24,11 @@
         "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\main.xml"
     },
     {
-        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_item.xml",
-        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\popupwindow_item.xml"
-    },
-    {
         "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\circular_lay.xml",
         "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\circular_lay.xml"
+    },
+    {
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_item.xml",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\popupwindow_item.xml"
     }
 ]

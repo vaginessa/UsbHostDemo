@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.adutils.phone.ABDensityUtil;
 import com.ivan.usbhost.R;
 
 /**
@@ -56,6 +57,10 @@ public class MCircular extends BaseCircular {
         ps.height = size;
         ps.width = size;
         img_circular.setLayoutParams(ps);
+        LayoutParams ps_bg = (LayoutParams) img_circular.getLayoutParams();
+        ps_bg.height = size + ABDensityUtil.dip2px(getContext(), 15);
+        ps_bg.width = size + ABDensityUtil.dip2px(getContext(), 15);
+        img_circular_bg.setLayoutParams(ps_bg);
     }
 
     @Override

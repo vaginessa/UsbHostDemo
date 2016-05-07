@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="circular_pop_back">#F2F2F2</color>
+    <color name="circular_stroke">#D8D8D8</color>
     <color name="cl_Blue">#5BCFE1</color>
     <color name="cl_Blue_sc">#0000FF</color>
     <color name="cl_Gray">#969899</color>

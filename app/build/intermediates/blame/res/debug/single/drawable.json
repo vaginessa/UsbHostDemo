@@ -12,12 +12,16 @@
         "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable\\account_item_bg_select.xml"
     },
     {
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circular_gray.xml",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable\\circular_gray.xml"
+    },
+    {
         "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pen.png",
         "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable\\pen.png"
     },
     {
-        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\hall_test_eraser.xml",
-        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable\\hall_test_eraser.xml"
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circular_gray_b.xml",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable\\circular_gray_b.xml"
     },
     {
         "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circular_item_bg_select.xml",

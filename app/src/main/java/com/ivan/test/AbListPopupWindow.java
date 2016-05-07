@@ -2,21 +2,19 @@ package com.ivan.test;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.adutils.ABLogUtil;
 import com.adutils.phone.ABDensityUtil;
 import com.ivan.usbhost.R;
 
@@ -31,6 +29,7 @@ public class AbListPopupWindow implements OnItemClickListener {
     public static AbListPopupWindow application;
 
     public AbListPopupWindow(Context c) {
+        context = c;
     }
 
     public static AbListPopupWindow getInstance(Context c) {
@@ -41,37 +40,19 @@ public class AbListPopupWindow implements OnItemClickListener {
     }
 
     private View mBaseView;
-    private OnItemClickListener mOnItemClickListener;
     private PopupWindow mPopupWindow;
     private ListView mLV_pop;
     private InsideListAdapter mInsideListAdapter;
-    private float TextSize = 14;
-    private int TextGravity = Gravity.CENTER;
 
-    public float getTextSize() {
-        return TextSize;
-    }
 
-    public void setTextSize(float textSize) {
-        TextSize = ABDensityUtil.px2sp(context, textSize);
-    }
-
-    public int getTextGravity() {
-        return TextGravity;
-    }
-
-    public void setTextGravity(int textGravity) {
-        TextGravity = textGravity;
-    }
-
-    public AbListPopupWindow(Context context, boolean isNeedCircular, final View baseView, int textSize, List<String> listString, int height, OnItemClickListener onItemClickListener) {
+    public AbListPopupWindow(Context context, boolean isNeedCircular, final View baseView, int textSize, List<String> listString, int height, MyItemClickListener myItemClickListener) {
         this.context = context;
-        openPopupWindow(isNeedCircular, baseView, textSize, listString, onItemClickListener);
+        openPopupWindow(isNeedCircular, baseView, listString, myItemClickListener);
     }
 
-    public AbListPopupWindow(Context context, boolean isNeedCircular, final View baseView, int baseViewWidth, int baseViewHeight, OnItemClickListener onItemClickListener) {
+    public AbListPopupWindow(Context context, boolean isNeedCircular, final View baseView, int baseViewWidth, int baseViewHeight, MyItemClickListener myItemClickListener) {
         this.context = context;
-        InitPopupWindow(isNeedCircular, baseView, onItemClickListener);
+        InitPopupWindow(isNeedCircular, baseView, myItemClickListener);
     }
 
     /**
@@ -79,46 +60,53 @@ public class AbListPopupWindow implements OnItemClickListener {
      *
      * @param isNewPopopWindow    是否新建一个pop
      * @param baseView            the baseView
-     * @param textSize            the textSize
      * @param listString          the listString
      * @param onItemClickListener the onItemClickListener
      */
-    public void openPopupWindow(boolean isNeedCircular, final View baseView, int textSize, List<String> listString, OnItemClickListener onItemClickListener) {
+    public void openPopupWindow(boolean isNeedCircular, final View baseView, List<String> listString, MyItemClickListener myItemClickListener) {
         if (this.mBaseView == null || !this.mBaseView.equals(baseView)) {
             if (mPopupWindow != null && mPopupWindow.isShowing())
                 mPopupWindow.dismiss();
             mPopupWindow = null;
-            InitPopupWindow(isNeedCircular, baseView, onItemClickListener);
+            InitPopupWindow(isNeedCircular, baseView, myItemClickListener);
         } else {
             if (mPopupWindow == null)
-                InitPopupWindow(isNeedCircular, baseView, onItemClickListener);
+                InitPopupWindow(isNeedCircular, baseView, myItemClickListener);
             else if (mPopupWindow.isShowing())
                 mPopupWindow.dismiss();
         }
+        //数据更新=======================================
+        if (isNeedCircular)
+            addCircular();
         setStringData(listString);
         mInsideListAdapter.notifyDataSetChanged();
         mPopupWindow.showAsDropDown(mBaseView, mBaseView.getWidth() + 5, -mBaseView.getHeight());
     }
 
+    private View popView;
+
     /**
      * 初始化下拉框
      *
+     * @param isNeedCircular
      * @param baseView            the baseView
      * @param onItemClickListener the onItemClickListener
      */
-    private void InitPopupWindow(boolean isNeedCircular, final View baseView, OnItemClickListener onItemClickListener) {
+    private void InitPopupWindow(boolean isNeedCircular, final View baseView, MyItemClickListener myItemClickListener) {
         this.context = context;
         this.mBaseView = baseView;
         this.isNeedCircular = isNeedCircular;
-        this.mOnItemClickListener = onItemClickListener;
+        this.myItemClickListener = myItemClickListener;
         LayoutInflater inflater = (LayoutInflater) baseView.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View popView = inflater.inflate(R.layout.popupwindow, null, false);
+        popView = inflater.inflate(R.layout.widget_popupwindow, null, false);
         mLV_pop = (ListView) popView.findViewById(R.id.popupwindow_list);
         if (isNeedCircular) {
-            popView.findViewById(R.id.abRadioGroup).setVisibility(View.VISIBLE);
-            addCircular(popView);
+            popView.findViewById(R.id.circular_gl).setVisibility(View.VISIBLE);
+            popView.findViewById(R.id.line).setVisibility(View.VISIBLE);
+            addCircular();
         } else {
-            popView.findViewById(R.id.abRadioGroup).setVisibility(View.GONE);
+            popView.findViewById(R.id.circular_gl).setVisibility(View.GONE);
+            popView.findViewById(R.id.line).setVisibility(View.GONE);
         }
         mLV_pop.setOnItemClickListener(this);
         mPopupWindow = new PopupWindow(popView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -129,25 +117,42 @@ public class AbListPopupWindow implements OnItemClickListener {
         mLV_pop.setAdapter(mInsideListAdapter);
     }
 
+    private int circularIndex = 1;
+
     /**
      * 小圆相关
      *
      * @param popView
      */
-    private void addCircular(View popView) {
-        ABRadioGroup radioGroup = (ABRadioGroup) popView.findViewById(R.id.abRadioGroup);
-        radioGroup.setOnCheckedChangeListener(new ABRadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(ABRadioGroup group, int checkedId) {
-            }
-        });
+    private void addCircular() {
+        LinearLayout circular_gl = (LinearLayout) popView.findViewById(R.id.circular_gl);
+        if (circular_gl != null)
+            circular_gl.removeAllViews();
+        for (int i = 1; i < 4; i++) {
+            final MCircular circular = new MCircular(context);
+            circular.setIndex(i);
+            circular.setCheck(i == circularIndex);
+            circular.setSize(ABDensityUtil.dip2px(context, 10 + i * 10));
+            circular.setCircularColorDrawable(R.drawable.circular_gray, R.drawable.circular_gray_b);
+            circular_gl.addView(circular);
+            circular.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    circularIndex = circular.getIndex();
+                    if (myItemClickListener != null)
+                        myItemClickListener.onCircularItemSelected(circular.getIndex());
+                    if (mPopupWindow.isShowing())
+                        mPopupWindow.dismiss();
+                }
+            });
+        }
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (mOnItemClickListener != null) {
-            mOnItemClickListener.onItemClick(parent, view, position, id);
-        }
+        listItemIndex = position;
+        if (myItemClickListener != null)
+            myItemClickListener.onListItemSelected(parent, view, position, id);
         if (mPopupWindow != null && mPopupWindow.isShowing())
             mPopupWindow.dismiss();
     }
@@ -173,6 +178,8 @@ public class AbListPopupWindow implements OnItemClickListener {
         MyPopupWindowData data;
         for (int i = 0; i < listString.size(); i++) {
             data = new MyPopupWindowData();
+            if (!isNeedCircular && i == (listString.size() - 1))
+                data.setHaveImg(false);
             data.setmPopItemName(listString.get(i) + "");
             data.setmPopItemCode(i);
             myPopupWindowDatas.add(data);
@@ -200,6 +207,7 @@ public class AbListPopupWindow implements OnItemClickListener {
     public void showPopupWindow() {
         if (mPopupWindow.isShowing())
             mPopupWindow.dismiss();
+        mInsideListAdapter.notifyDataSetChanged();
         mPopupWindow.showAsDropDown(mBaseView, mBaseView.getWidth() + 5, -mBaseView.getHeight());
     }
 
@@ -209,6 +217,7 @@ public class AbListPopupWindow implements OnItemClickListener {
     public static class MyPopupWindowData implements Serializable {
         public String mPopItemName = "";
         public int mPopItemCode = 0;
+        public boolean haveImg = true;
 
         public int getmPopItemCode() {
             return mPopItemCode;
@@ -225,9 +234,17 @@ public class AbListPopupWindow implements OnItemClickListener {
         public void setmPopItemName(String mPopItemName) {
             this.mPopItemName = mPopItemName;
         }
+
+        public boolean isHaveImg() {
+            return haveImg;
+        }
+
+        public void setHaveImg(boolean haveImg) {
+            this.haveImg = haveImg;
+        }
     }
 
-    private int index = 0;
+    private int listItemIndex = 1;
 
     /**
      * MyPopupWindow列表数据适配器
@@ -259,7 +276,8 @@ public class AbListPopupWindow implements OnItemClickListener {
         }
 
         private class ViewHoler {
-            TextView tV_pop_item;
+            ImageView im_pop_item;
+            TextView tv_pop_item;
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -267,36 +285,48 @@ public class AbListPopupWindow implements OnItemClickListener {
             if (convertView == null) {
                 viewHolder = new ViewHoler();
                 convertView = LayoutInflater.from(context).inflate(R.layout.abpopup_list_item_lay, null, true);
-                viewHolder.tV_pop_item = (TextView) convertView.findViewById(R.id.pop_item_tv);
+                viewHolder.im_pop_item = (ImageView) convertView.findViewById(R.id.pop_item_iv);
+                viewHolder.tv_pop_item = (TextView) convertView.findViewById(R.id.pop_item_tv);
                 convertView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHoler) convertView.getTag();
             }
+            ABLogUtil.i("listItemIndex:=============" + listItemIndex);
             if (isNeedCircular) {
-                convertView.setBackgroundResource(position==index?R.drawable.circular_pen_h:R.drawable.circular_pen_n);
+                viewHolder.tv_pop_item.setTextColor(context.getResources().getColor(R.color.font_style_colors));
+                convertView.setBackgroundResource(position == listItemIndex ? R.color.pen_item_h : R.color.pen_item_n);
             } else {
-                convertView.setBackgroundResource(R.drawable.hall_test_eraser);
+                viewHolder.tv_pop_item.setTextColor(context.getResources().getColor(R.color.cl_black));
+                convertView.setBackgroundResource((position == listItemIndex ? R.color.eraser_item_h : R.color.eraser_item_n));
             }
-
-            if (position == 1)
-                convertView.setSelected(true);
-            viewHolder.tV_pop_item.setText(getItem(position).mPopItemName);
+            viewHolder.im_pop_item.setVisibility(getItem(position).haveImg ? View.VISIBLE : View.INVISIBLE);
+            viewHolder.tv_pop_item.setText(getItem(position).mPopItemName);
             return convertView;
         }
     }
 
+    public interface MyItemClickListener {
+        /**
+         * listView item选中信息
+         *
+         * @param index
+         */
+        void onListItemSelected(AdapterView<?> parent, View view, int position, long id);
 
-//    /**
-//     * 枚举像普通的类一样可以添加属性和方法，可以为它添加静态和非静态的属性或方法
-//     */
-//    public enum SeasonEnum {
-//        pen, eraser;
-//
-//        public static SeasonEnum getSeason(SeasonEnum seasonEnum) {
-//            if (eraser.equals(seasonEnum))
-//                return eraser;
-//            else
-//                return pen;
-//        }
-//    }
+        /**
+         * 当前选中的小圆信息
+         *
+         * @param index
+         */
+        void onCircularItemSelected(int index);
+    }
+
+    /**
+     * 数据读取接口对象
+     */
+    private MyItemClickListener myItemClickListener;
+
+    public void onMyItemClick(MyItemClickListener myItemClickListener) {
+        this.myItemClickListener = myItemClickListener;
+    }
 }

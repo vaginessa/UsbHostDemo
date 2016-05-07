@@ -22,6 +22,7 @@ public class AbCircularColorPopupWindow {
     public static AbCircularColorPopupWindow application;
 
     public AbCircularColorPopupWindow(Context c) {
+        context = c;
     }
 
     public static AbCircularColorPopupWindow getInstance(Context c) {
@@ -97,7 +98,6 @@ public class AbCircularColorPopupWindow {
      */
     private void updateUI(final GridLayout gridLayout, final int totleCircular, final int columnCount) {
         gridLayout.setColumnCount(columnCount);
-        gridLayout.setBackgroundResource(R.color.cl_gray);
         if (gridLayout != null)
             gridLayout.removeAllViews();
         for (int i = 0; i < totleCircular; i++) {

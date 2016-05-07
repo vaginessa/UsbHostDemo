@@ -13,10 +13,13 @@
     <color name="cl_Yellow">#FFFF00</color>
     <color name="cl_Red">#FF0000</color>
 
-    <color name="eraser_item_h">#C8E4EF</color>
-    <color name="eraser_item_n">#ECECEC</color>
+    <color name="circular_pop_back">#F2F2F2</color>
+    <color name="circular_stroke">#D8D8D8</color>
 
     <color name="pen_item_h">#D8D8D8</color>
     <color name="pen_item_n">#F2F2F2</color>
+
+    <color name="eraser_item_h">#C8E4EF</color>
+    <color name="eraser_item_n">#ECECEC</color>
 
 </resources>

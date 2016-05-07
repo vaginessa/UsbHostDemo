@@ -8,9 +8,9 @@ package com.adutils;
 
 public final class R {
 	public static final class color {
-		public static final int colorAccent = 0x7f07000b;
-		public static final int colorPrimary = 0x7f07000c;
-		public static final int colorPrimaryDark = 0x7f07000d;
+		public static final int colorAccent = 0x7f07000d;
+		public static final int colorPrimary = 0x7f07000e;
+		public static final int colorPrimaryDark = 0x7f07000f;
 	}
 	public static final class dimen {
 		public static final int activity_horizontal_margin = 0x7f060000;
