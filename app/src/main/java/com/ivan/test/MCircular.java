@@ -3,7 +3,6 @@ package com.ivan.test;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.adutils.phone.ABDensityUtil;
@@ -72,7 +71,7 @@ public class MCircular extends BaseCircular {
     }
 
     void initViews() {
-        LayoutInflater.from(getContext()).inflate(R.layout.circular_lay, this);
+        LayoutInflater.from(getContext()).inflate(R.layout.widget_circular_lay, this);
         img_circular = (ImageView) findViewById(R.id.img_circular);
         img_circular_bg = (ImageView) findViewById(R.id.img_circular_bg);
     }

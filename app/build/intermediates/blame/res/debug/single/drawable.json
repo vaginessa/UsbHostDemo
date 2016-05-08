@@ -20,6 +20,10 @@
         "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable\\pen.png"
     },
     {
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\class_room_test_pop_bg.xml",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable\\class_room_test_pop_bg.xml"
+    },
+    {
         "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circular_gray_b.xml",
         "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\drawable\\circular_gray_b.xml"
     },

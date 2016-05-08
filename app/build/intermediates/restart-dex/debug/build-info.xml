@@ -4,51 +4,29 @@
     api-level="19"
     density="hdpi"
     format="7"
-    timestamp="16133714852792"
-    verifier="COMPATIBLE" >
+    timestamp="75658772139599" >
 
     <task
         name="javac"
-        duration="65" />
+        duration="168" />
     <task
         name="instant-run-dex"
-        duration="415" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="6" />
+        duration="122" />
     <task
         name="verifier"
-        duration="2" />
+        duration="38" />
 
     <artifact
-        location="F:\Android\ASWorkSpace\UsbHostDemo1\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="F:\Android\ASWorkSpace\UsbHostDemo1\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="15964532043927" >
+    <build timestamp="75658772139599" >
         <artifact
             location="F:\Android\ASWorkSpace\UsbHostDemo1\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="16015564798690"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="F:\Android\ASWorkSpace\UsbHostDemo1\app\build\intermediates\builds\debug\16015564798690\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="16068486394584"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="F:\Android\ASWorkSpace\UsbHostDemo1\app\build\intermediates\builds\debug\16068486394584\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="16133714852792"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="F:\Android\ASWorkSpace\UsbHostDemo1\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

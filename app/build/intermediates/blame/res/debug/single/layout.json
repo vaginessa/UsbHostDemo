@@ -8,12 +8,12 @@
         "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\listview.xml"
     },
     {
-        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow.xml",
-        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\popupwindow.xml"
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\widget_popup_list_item_lay.xml",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\widget_popup_list_item_lay.xml"
     },
     {
-        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abpopup_list_item_lay.xml",
-        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\abpopup_list_item_lay.xml"
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\widget_circular_lay.xml",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\widget_circular_lay.xml"
     },
     {
         "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\add_popup_dialog.xml",
@@ -24,8 +24,8 @@
         "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\main.xml"
     },
     {
-        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\circular_lay.xml",
-        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\circular_lay.xml"
+        "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\widget_popupwindow.xml",
+        "source": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\src\\main\\res\\layout\\widget_popupwindow.xml"
     },
     {
         "merged": "F:\\Android\\ASWorkSpace\\UsbHostDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popupwindow_item.xml",

@@ -293,10 +293,10 @@ public class AbListPopupWindow implements OnItemClickListener {
             }
             ABLogUtil.i("listItemIndex:=============" + listItemIndex);
             if (isNeedCircular) {
-                viewHolder.tv_pop_item.setTextColor(context.getResources().getColor(R.color.font_style_colors));
+//                viewHolder.tv_pop_item.setTextColor(context.getResources().getColor(R.color.font_style_colors));
                 convertView.setBackgroundResource(position == listItemIndex ? R.color.pen_item_h : R.color.pen_item_n);
             } else {
-                viewHolder.tv_pop_item.setTextColor(context.getResources().getColor(R.color.cl_black));
+//                viewHolder.tv_pop_item.setTextColor(context.getResources().getColor(R.color.cl_black));
                 convertView.setBackgroundResource((position == listItemIndex ? R.color.eraser_item_h : R.color.eraser_item_n));
             }
             viewHolder.im_pop_item.setVisibility(getItem(position).haveImg ? View.VISIBLE : View.INVISIBLE);
