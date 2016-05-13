@@ -51,8 +51,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int pen_item_n=0x7f070013;
     }
     public static final class dimen {
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
+        public static final int action_bar_height=0x7f060000;
+        public static final int activity_horizontal_margin=0x7f060001;
+        public static final int activity_vertical_margin=0x7f060009;
+        public static final int content_margin=0x7f060002;
+        public static final int fab_margin=0x7f060003;
+        public static final int fab_size_normal=0x7f060004;
+        public static final int list_title_height=0x7f060005;
+        public static final int report_category_height=0x7f060006;
+        public static final int report_table_header_height=0x7f060007;
+        public static final int tab_height=0x7f060008;
     }
     public static final class drawable {
         public static final int account_item_bg_select=0x7f020000;
@@ -111,11 +119,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int add_popup_dialog=0x7f030000;
         public static final int listview=0x7f030001;
         public static final int main=0x7f030002;
-        public static final int popupwindow_item=0x7f030003;
-        public static final int widget_cicular_popup=0x7f030004;
-        public static final int widget_circular_lay=0x7f030005;
-        public static final int widget_popup_list_item_lay=0x7f030006;
-        public static final int widget_popupwindow=0x7f030007;
+        public static final int mainss=0x7f030003;
+        public static final int popupwindow_item=0x7f030004;
+        public static final int widget_cicular_popup=0x7f030005;
+        public static final int widget_circular_lay=0x7f030006;
+        public static final int widget_popup_list_item_lay=0x7f030007;
+        public static final int widget_popupwindow=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f090000;

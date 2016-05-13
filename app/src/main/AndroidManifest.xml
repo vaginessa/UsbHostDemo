@@ -32,15 +32,15 @@
         <activity
             android:name="com.ivan.test.ABTextActivity"
             android:label="ABTextActivity" >
-        </activity>
-        <service android:name=".USB_Service">
-        </service>
-        <activity android:name="com.ivan.test.DialogActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <service android:name=".USB_Service">
+        </service>
+        <activity android:name="com.ivan.test.DialogActivity">
         </activity>
     </application>
 

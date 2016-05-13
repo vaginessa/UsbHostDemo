@@ -13,8 +13,8 @@ public final class R {
 		public static final int colorPrimaryDark = 0x7f07000f;
 	}
 	public static final class dimen {
-		public static final int activity_horizontal_margin = 0x7f060000;
-		public static final int activity_vertical_margin = 0x7f060001;
+		public static final int activity_horizontal_margin = 0x7f060001;
+		public static final int activity_vertical_margin = 0x7f060009;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f080000;

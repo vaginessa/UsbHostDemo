@@ -26,7 +26,7 @@ public class ABTextActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.mainss);
         text = (TextView) findViewById(R.id.info);
         init();
     }

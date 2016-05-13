@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.adutils.ABLogUtil;
 import com.ivan.usbhost.R;
-import com.ivan.usbhost.USBModular;
 
 import java.util.ArrayList;
 
@@ -36,6 +35,7 @@ public class DialogActivity extends Activity implements View.OnClickListener {
         text_b.setOnClickListener(this);
         text_c = (TextView) findViewById(R.id.info_c);
         text_c.setOnClickListener(this);
+        ABDimensTools_coppy.gen();
     }
 
     ArrayList<String> testList;
